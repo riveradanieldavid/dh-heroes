@@ -6,7 +6,7 @@ const app = express();
 const port = 3030;
 app.listen(port, () => console.log(`Servidor corriendo en http://localhost:${port}`));
 
-//CONFIGURAMOS RUTAS A NUESTROS ARCHIVOS
+//CONFIGURAMOS RUTAS A NUESTROS ARCHIVOS PARA ABRIRLOS EN NAVEGADOR
 const path = require('path');
 app.get('/home', (req, res) => res.sendFile(path.join(__dirname, 'views', 'index.html')));
 app.get('/babbage', (req, res) => res.sendFile(path.join(__dirname, 'views', 'babbage.html')));
@@ -17,4 +17,6 @@ app.get('/hopper', (req, res) => res.sendFile(path.join(__dirname, 'views', 'hop
 app.get('/lovelace', (req, res) => res.sendFile(path.join(__dirname, 'views', 'lovelace.html')));
 app.get('/turing', (req, res) => res.sendFile(path.join(__dirname, 'views', 'turing.html')));
 
+// RUTAS ESTATICAS PARA ENLAZAR ARCHIVOS ENRE SI
 app.use(express.static('public'));
+app.use(express.static('views'));
