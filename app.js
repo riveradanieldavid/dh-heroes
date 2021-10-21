@@ -20,3 +20,5 @@ app.get('/turing', (req, res) => res.sendFile(path.join(__dirname, 'views', 'tur
 // RUTAS ESTATICAS PARA ENLAZAR ARCHIVOS ENRE SI
 app.use(express.static('public'));
 app.use(express.static('views'));
+
+//ESTO ES UNA PRUEBA PARA https://vscode.dev/
